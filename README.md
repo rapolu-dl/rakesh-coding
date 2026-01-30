@@ -11,7 +11,7 @@ This repository demonstrates the evolution of a log parsing system from a basic 
 
 ## 📂 Repository Contents
 
-### 1. `logparser_1logfile.py` (Memory Optimized)
+### 1. `logparser_forone_logfile.py` (Memory Optimized)
 **Concept:** The Baseline.  
 Uses Python **Generators (`yield`)** to stream the file line-by-line.
 * **Pros:** Constant O(1) memory usage regardless of file size.
@@ -58,4 +58,6 @@ Implements the **Producer-Consumer Pattern** using a shared `Manager().Queue()`.
 
 **1. Basic Generator**
 ```bash
-python logparser_1logfile.py
+python logparser_forone_logfile.py
+python logparser_formutiplefiles_multiprocessing.py
+python logparser_forhugemutiplefiles_multiprocessing.py
