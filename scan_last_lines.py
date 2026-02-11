@@ -18,7 +18,7 @@ def scan_last(filepath):
         print(f"Found: {clean_line}")
 
         for j in range(1,3):
-          if i == j < count:
+          if i + j < count:
             context = last_lines[i+j].decode('ascii' , errors = 'ignore').strip()
             print(f" --> {context}")
       i += 1
@@ -27,9 +27,9 @@ def scan_last(filepath):
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
-  parser.add_argument("server_num")
+  parser.add_argument("server_name")
   args = parser.parse_args()
-  path = rf"\\server[args.server_num.strip()]\temp\log\build.log"
+  path = rf"\\{args.server_name.strip()}\temp\log\build.log"
   print(f"Scanning: {path}")
     
   if os.path.exists(path):
